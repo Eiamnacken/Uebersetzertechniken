@@ -12,10 +12,10 @@ public class Main
     public static void main(String[] args) throws Exception {
         CharStream input = null;
         // Pick an input stream (filename from commandline or stdin)
-        int programmLength=0;
-        int allOperators=0;
-        int allOPerands=0;
-        int voc=0;
+        double programmLength=0;
+        double allOperators=0;
+        double allOPerands=0;
+        double voc=0;
         List<String> countOperators= new LinkedList<>();
         List<String> countOperands= new LinkedList<>();
         int volume=0;
