@@ -2,18 +2,18 @@ grammar Syntax;
 
 prog:stat+;
 
-stat:  expr NEWLINE         #printExpr
-       | ID '='expr NEWLINE #assign
-       | NEWLINE           #blank
+stat:  expr NEWLINE
+       | ID '='expr NEWLINE
+       | NEWLINE
        ;
 
-expr:  <assoc=right>expr '^' expr   #Pot
-      | expr op=('*'|'/') expr      #MulDiv
-      | expr op=('+'|'-') expr      #AddSub
-      | '(' expr ')'                #parens
-      | expr op=('<'|'>') expr         #SmallerasBiggeras
-      | FLOAT                       #float
-      | ID                          # id
+expr:  <assoc=right>expr '^' expr
+      | expr op=('*'|'/') expr
+      | expr op=('+'|'-') expr
+      | '(' expr ')'
+      | expr op=('<'|'>') expr
+      | FLOAT
+      | ID
       ;
 FLOAT: INT?'.'INT;
 INT: [0-9]+;
