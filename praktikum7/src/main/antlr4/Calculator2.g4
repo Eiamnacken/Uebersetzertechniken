@@ -35,10 +35,10 @@ stat: e NEWLINE  {System.out.println($e.v);}
 clear : '#' {visitVClear();};
 
 e returns [double v]
- : <assoc=right>l=e '^' r=e   {$v= eval($a.v,$op.type,$b.v);}
-    | l=e op=('*'|'/') r=e {$v= eval($a.v,$op.type,$b.v);}
-    | l=e op=('+'|'-') r=e {$v= eval($a.v,$op.type,$b.v);}
-    | l=e op=('<'|'>') r=e {$v= eval($a.v,$op.type,$b.v);}
+ : <assoc=right>l=e '^' r=e   {$v= eval($l.v,$op.type,$r.v);}
+    | l=e op=('*'|'/') r=e {$v= eval($l.v,$op.type,$r.v);}
+    | l=e op=('+'|'-') r=e {$v= eval($l.v,$op.type,$r.v);}
+    | l=e op=('<'|'>') r=e {$v= eval($l.v,$op.type,$r.v);}
     | (INT|DOUBLE)          {$v= $DOUBLE.int;}
     | ID
     {
