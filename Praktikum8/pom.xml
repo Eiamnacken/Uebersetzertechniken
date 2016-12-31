@@ -64,4 +64,13 @@
             <version>4.12</version>
         </dependency>
     </dependencies>
+    <issueManagement>
+    	<url>https://github.com/Eiamnacken/Uebersetzertechniken/issues</url>
+    	<system>github</system>
+    </issueManagement>
+    <scm>
+    	<connection>git</connection>
+    	<developerConnection>Sven Marquardt</developerConnection>
+    	<url>https://github.com/Eiamnacken/Uebersetzertechniken</url>
+    </scm>
 </project>
