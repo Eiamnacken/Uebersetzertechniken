@@ -1,0 +1,23 @@
+grammar org.xtext.example.mydsl.MyDsl with org.eclipse.xtext.common.Terminals
+
+generate myDsl "http://www.xtext.org/example/mydsl/MyDsl"
+
+Model:
+	types+=TypeDeclaration*;
+	
+TypeDeclaration:
+	'type' name=ID ('extends' superType=[TypeDeclaration])? '{'
+		properties+=Property*
+	'}';
+
+Property:
+    type=Type name=ID;
+
+Type :
+    (TypeReference | PrimitiveType) (arrayDimensions+='['']')*;
+
+TypeReference:
+    typeRef=[TypeDeclaration];
+
+PrimitiveType:
+    name=('string'|'int'|'boolean');

@@ -22,10 +22,10 @@ formalParameter
     ;
 
 
-c_for: ('for' '(' (ID '=' NUMBER )? ';' expr? ';' (('--'|'++')? ID ('++'|'--'))?')'block);
+c_for: 'for' '(' (ID '=' NUMBER )? ';' expr? ';' (('--'|'++')? ID ('++'|'--'))?')'block;
 
-c_if: ('if''(' expr ')' block ('else' (c_if?|block))?);
-
+c_if: 'if''(' expr ')' block c_else?;
+c_else: 'else' (block|c_if);
 
 block:  '{' stat* '}' ;   // possibly empty statement block
 
